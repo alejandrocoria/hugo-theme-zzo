@@ -5,8 +5,24 @@
   </h3>
 </header>
 <main class="main">
-  <article class="single__contents single__contents--about about">
-    {{ .Content }}
+  <article class="single__contents">
+    <div class="about">
+      {{ .Content }}
+    </div>
+    <div class="about__donation">
+    {{ if .Params.address_bch }}
+    <div class="about__qr-wrapper">
+      <img alt="{{ .Params.address_bch }}" src="/images/qr/{{ .Params.address_bch }}.png" class="about__qr"/>
+      <span style="user-select: all;">bitcoincash:{{ .Params.address_bch }}</span>
+    </div>
+    {{ end }}
+    {{ if .Params.address_btc }}
+    <div class="about__qr-wrapper">
+      <img alt="{{ .Params.address_btc }}" src="/images/qr/{{ .Params.address_btc }}.png" class="about__qr"/>
+      <div>BTC:<span style="user-select: all;">{{ .Params.address_btc }}</span></div>
+    </div>
+    {{ end }}
+    </div>
   </article>
 </main>
 <div class="hide">

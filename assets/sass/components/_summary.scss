@@ -1,3 +1,103 @@
+.summary-custom {
+  margin: 0.75rem 0.75rem 2rem;
+  padding: 0.75rem;
+  @include themify($themes) {
+      background-color: themed('summary-custom-background-color');
+      @include box-shadow(0, 8px, 6px, -6px, themed('summary-custom-shadow-color'));
+  }
+  
+  .title {    
+    a {
+      font-family: $title-font;
+      font-weight: 700;
+      @include themify($themes) {
+          color: themed('title-color');
+          @include on-event {
+            color: themed('link-hover');
+          }
+      }
+	    font-size: 45px;
+	    line-height: 1em;
+	    position: absolute;
+	    bottom: -0.36em;
+	    left: 10px;
+    }
+  }
+  
+  &__header {
+	  position: relative;
+	  margin-bottom: 0.5rem;
+  }
+
+  &__content {
+    @include flexbox();
+    @include flex-direction(column);
+    @include justify-content(center);
+  }
+
+  &__text {
+    margin-top: 1rem;
+    line-height: 1.7rem;
+    font-family: $content-font;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+	  -webkit-mask-image:-webkit-gradient(linear, left 70%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+    mask-image: linear-gradient(70% bottom, rgba(0,0,0,1), rgba(0,0,0,0) 100%);
+   
+    &-wrapper {
+      height: auto;
+      width: 100%;
+      margin: 0 auto;
+      padding-bottom: 0;
+    }
+  }
+
+  &__video {
+    width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+
+    &-wrapper {
+      padding: 1rem;
+      padding-bottom: 0;
+    }
+  }
+  
+  &__buttons {
+    max-width: 192px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  &__play_on_button {
+    img {
+      height: auto;
+      width: 100%;
+	  }
+  }
+  
+  hr {
+    margin-top: 1.5rem;
+    @include themify($themes) {
+        border-top: 1px solid themed('hr-color');
+    }
+  }
+  &:not(:last-child) {
+    hr {
+      margin-bottom: 4rem;      
+    }
+  }
+  &:last-child {
+    hr {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
 .summary-card {
   margin: 0 0.5rem;
   padding: 0 0.5rem;

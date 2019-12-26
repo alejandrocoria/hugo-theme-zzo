@@ -1,0 +1,6 @@
+{{ $imgpath := (print "images/" .path) }}
+{{ $img := resources.Get $imgpath }}
+{{ if $img }}
+  {{ $placeholder := $img.Resize "6x" }}
+  <img data-src="{{ $img.Permalink }}" alt="{{ .path }}" src="data:image/jpg;base64,{{ $placeholder.Content | base64Encode }}" width={{ $img.Width }} height={{ $img.Height }} class="lazyload {{ .class }}"/>
+{{ end }}

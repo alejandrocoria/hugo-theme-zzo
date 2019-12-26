@@ -30,6 +30,7 @@
     letter-spacing: 1px;
     font-family: inherit;
     font-size: 26px;
+	  @include align-self(center);
   }
 
   &__desc {
@@ -38,11 +39,20 @@
   }
 
   &__info {
-    font-size: 14px;
+    font-size: 13px;
     margin: 0.1rem 0;
     @include flexbox();
-    @include align-items(center);
-    @include justify-content(center);
+    @include align-items(flex-end);
+    width: 100%;
+    
+    &-wrapper {
+      @include flexbox();
+      @include align-items(center);
+      @include justify-content(center);
+      @include align-self(center);
+      @include flex-direction(column);
+      width: auto;
+    }
 
     &--icon {
       margin-right: 0.25rem;
@@ -54,7 +64,6 @@
     }
 
     a {
-      padding-right: 1rem;
       @include truncate(calcSideWidth());
     }
   }
@@ -62,16 +71,15 @@
   &__social {
     width: 100%;
     margin-top: 0.5rem;
-    
+	
     @include flexbox();
     a {      
       text-decoration: none !important;
-      width: 100%;
-      padding: 0.5rem;
+      padding: 0.1rem;
       border-radius: 0.125rem;
+	  width: 100%;
       
       @include flexbox();    
-      @include align-items(center);
       @include justify-content(space-around);
       @include themify($themes) {
         color: themed('social-icon-color');

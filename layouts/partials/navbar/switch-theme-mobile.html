@@ -1,0 +1,9 @@
+{{ if $.Param "enableThemeSwitch" }}
+<div class="theme-mobile">
+  <div>
+    <button class="switch-theme" aria-label="Switch Colors" style="{{ if .Site.Params.enableSearch }}{{ else }}position: absolute; top: 0;{{ end }}">
+      {{ partial "svgs/etc/switch-colors.svg" (dict "width" 22 "height" 22) }}
+    </button>
+  </div>
+</div>
+{{ end }}

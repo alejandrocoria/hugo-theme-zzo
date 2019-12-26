@@ -3,13 +3,25 @@
   position: relative;
   width: 100%;
   overflow-wrap: break-word;
+  
+  &__header {
+	position: relative;
+	margin-bottom: 1rem;
+  }
+  
+  &__featured_image {
+    -webkit-mask-image:-webkit-gradient(linear, left 60%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+    mask-image: linear-gradient(60% bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+  }
 
   &__title {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 900;
     font-family: $title-font;
     line-height: 3rem;
     overflow-wrap: break-word;
+	position: absolute;
+	bottom: -0.25em;
 
     @include themify($themes) {
       color: themed("single-header-title-color");
@@ -311,6 +323,7 @@
     @include align-items(center);
     @include flex-wrap(wrap);
     @include flex-grow(1);
+	margin-bottom: 1rem;
   }
 
   &__tag {

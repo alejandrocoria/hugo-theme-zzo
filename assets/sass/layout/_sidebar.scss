@@ -2,6 +2,10 @@
   margin-top: 1rem;
   margin-right: 1rem;
 
+  &-single {
+    height: 100%;
+  }
+  
   &-recent {
     padding: 0.5rem;
 
@@ -35,6 +39,19 @@
         color: themed('sidebar-li-color');
       }
     }
+  }
+  
+  &__buttons {
+    position: -webkit-sticky;
+    position: sticky;
+    top: $grid_navbar_height;
+  }
+  
+  &__play_on_button {
+    img {
+      height: auto;
+      width: 240px;
+	  }
   }
 
   &-hr {

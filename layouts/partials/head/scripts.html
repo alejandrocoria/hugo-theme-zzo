@@ -8,12 +8,16 @@
 {{ end }}
 {{ end }}
 
+{{ if $.Param "enableSearch" }}
 {{ $fuse := resources.Get "js/fuse.min.js" | resources.Fingerprint }}
 <script defer src="{{ $fuse.RelPermalink }}"></script>
+{{ end }}
 
 <script>
   // search
   var runSearch = function() {
+    {{ if $.Param "enableSearch" }}
+    
     {{ if .Site.IsMultiLingual }}
         var baseurl = location.origin + "/{{.Site.Language.Lang}}";
     {{ else }}
@@ -169,5 +173,7 @@
       var results = fuse.search(e.target.value);
       renderSearchResultsMobile(results);
     });
+    
+    {{ end }}
   }
 </script>

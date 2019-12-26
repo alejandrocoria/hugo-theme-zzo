@@ -13,7 +13,7 @@
     </article>
 
     <div class="summary__container">
-        {{ range (.Paginator).Pages }}
+        {{ range where (.Paginator).Pages "Section" "projects"}}
         {{ .Render "summary" }}
         {{ end }}
     </div>

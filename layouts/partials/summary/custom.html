@@ -1,0 +1,62 @@
+<article class="summary-custom">
+  {{ $params := .Params }}
+  <div class="summary-custom__content">
+    <div class="summary-custom__header">
+      {{ if $params.featured_image }}
+      <div class="summary-custom__image-wrapper">
+        <a href="{{ .Permalink }}">
+          {{ partial "imglazy" (dict "path" $params.featured_image "class" "summary-custom__image") }}
+        </a>
+      </div>
+      {{ else if $params.featured_video }}
+      {{ with print ("videos/poster/" | relURL) $params.featured_video_poster }}
+      <div class="summary-custom__video-wrapper">
+        <video class="summary-custom__video" controls preload='none' poster='{{ . | relURL }}' data-setup='{"fluid": true}'>
+        {{ with print ("videos/" | relURL) $params.featured_video }}
+          <source src="{{ . | relURL }}" type='video/mp4'>
+        {{ end }}
+        </video>
+      </div>
+      {{ end }}
+      {{ else }}
+      <div style="min-height:160px">
+      </div>
+      {{ end }}
+      <h5 class="title h5"><a href='{{ .Permalink }}'> {{ .Title }}</a> </h5>
+      <div class="summary-custom__buttons">
+        {{ if .Params.play_on_android }}
+        <a class="summary-custom__play_on_button" href='{{ .Params.play_on_android }}'>
+          <img alt='Get it on Google Play' src={{ (resources.Get ("images/projects/play_on_android.png" | relLangURL)).Permalink }}/>
+        </a>
+        {{ end }}
+        {{ if .Params.play_on_itchio }}
+        <a class="summary-custom__play_on_button" href='{{ .Params.play_on_itchio }}'>
+          <img alt='Play on itch.io' src={{ (resources.Get ("images/projects/play_on_itchio.png" | relLangURL)).Permalink }}/>
+        </a>
+        {{ end }}
+        {{ if .Params.play_on_kongregate }}
+        <a class="summary-custom__play_on_button" href='{{ .Params.play_on_kongregate }}'>
+          <img alt='Play on KONGREGATE' src={{ (resources.Get ("images/projects/play_on_kongregate.png" | relLangURL)).Permalink }}/>
+        </a>
+        {{ end }}
+        {{ if .Params.link_to_curseforge }}
+        <a class="summary-custom__play_on_button" href='{{ .Params.link_to_curseforge }}'>
+          <img alt='Download from CurseForge' src={{ (resources.Get ("images/projects/link_to_curseforge.png" | relLangURL)).Permalink }}/>
+        </a>
+        {{ end }}
+        {{ if .Params.view_on_github }}
+        <a class="summary-custom__play_on_button" href='{{ .Params.view_on_github }}'>
+          <img alt='View on GitHub' src={{ (resources.Get ("images/projects/view_on_github.png" | relLangURL)).Permalink }}/>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+    <div class="summary-custom__text p2">
+      {{ with $params.Description }}
+      {{ . }}
+      {{ else }}
+      {{ .Summary }}
+      {{ end }}
+    </div>
+  </div>
+</article>

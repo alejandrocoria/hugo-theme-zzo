@@ -10,7 +10,7 @@
 
         {{ if $.Site.Copyright }}        
             <p class="caption">
-                {{ with $.Site.Copyright }}{{ replace . "{year}" now.Year | markdownify}}{{ end }}
+                {{ with $.Site.Copyright }}{{ replace . "{year}" now.Year | markdownify}}{{ end }} - <a href="{{ "/trademark/" | absLangURL }}" rel="noreferrer">{{ i18n "footer-trademark"}}</a>
             </p>
         {{ end }}
         <p class="caption">Powered by <a href="https://gohugo.io/" rel="noreferrer">Hugo</a> and the <a href="https://github.com/zzossig/hugo-theme-zzo" rel="noreferrer">Zzo theme</a></p>

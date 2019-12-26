@@ -6,12 +6,13 @@
   
   &__title {
     margin: 2rem 0;
+    text-align: center;
     @include themify($themes) {
       color: themed('terms-title-color');
-      text-shadow: 1px 1px 0 darken(themed('terms-title-color'), 10%), 
-        2px 2px 0 darken(themed('terms-title-color'), 14%), 
-        3px 3px 0 darken(themed('terms-title-color'), 18%),
-        4px 4px 0 darken(themed('terms-title-color'), 22%); 
+      text-shadow: 1px 1px 0 themed('terms-title-shadow-color'),
+        2px 2px 0 themed('terms-title-shadow-color'),
+        3px 3px 0 themed('terms-title-shadow-color'),
+        4px 4px 0 themed('terms-title-shadow-color'),
     }    
   }
 

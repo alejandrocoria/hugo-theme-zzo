@@ -1,0 +1,7 @@
+{{ if $.Param "enableThemeSwitch" }}
+<div class="theme">
+  <button class="switch-theme" aria-label="Switch Theme Button">
+    {{ partial "svgs/etc/switch-colors.svg" (dict "width" 22 "height" 22) }}      
+  </button>
+</div>
+{{ end }}

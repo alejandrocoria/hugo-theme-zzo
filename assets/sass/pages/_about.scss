@@ -1,3 +1,34 @@
-.about{
+.about {
   padding: 1rem;
+  max-width: 450px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: justify;
+  
+  &__donation {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    @include flexbox();
+    @include flex-flow(row wrap);
+    @include align-self(center);
+  }
+  
+  &__qr {
+    margin: 0 !important;
+    border-radius: 0 !important;
+    &-wrapper {
+      margin: 0 3em 3em;
+      font-size: .75rem;
+      line-height: 1.5rem;
+      font-family: sans-serif !important;
+      @include flexbox();
+      @include align-items(center);
+      @include justify-content(center);
+      @include align-self(center);
+      @include flex-direction(column);
+      text-align: center;
+    }
+  }
 }

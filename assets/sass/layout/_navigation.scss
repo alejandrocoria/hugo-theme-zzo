@@ -290,6 +290,27 @@
   @media only screen and (max-width: 769px) {
     display: none;
   }
+  
+  .switch-theme {
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(center);    
+    @include themify($themes) {
+      color: themed('burger-menu-color');  
+      @include on-event {
+        color: themed('navbar-title-hover-color');
+        background-color: themed('navbar-menu-hover-background-color');
+      }      
+    }
+    padding: 0.5rem;
+    cursor: pointer;
+    border: none;      
+    outline: none;
+    width: $grid_navbar_height;
+    height: $grid_navbar_height - 2px;
+    color: inherit;
+    background-color: inherit;
+  }
 
   .dropdown {    
     @include flexbox();
@@ -397,6 +418,24 @@
     @include align-items(center);
     @include justify-content(flex-end);
   }
+  
+  .switch-theme {
+    @include themify($themes) {
+      color: themed('burger-menu-color');  
+      @include on-event {
+        color: themed('link-hover');
+        background-color: themed('navbar-menu-hover-background-color');
+      }      
+    }
+    padding: 0.5rem;
+    cursor: pointer;
+    border: none;      
+    outline: none;
+    width: 35px;
+    height: $grid_navbar_height;
+    color: inherit;
+    background-color: inherit;
+  }
 
   .dropdown {
     border-bottom: 2px solid transparent;
@@ -423,7 +462,7 @@
     &-content {
       position: absolute;
       top: 100%;
-      right: 0;
+      right: auto;
       display: none;
       height: auto;
       z-index: z("dropdown");

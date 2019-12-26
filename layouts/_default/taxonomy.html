@@ -4,10 +4,12 @@
 <script src="{{ $enquire.RelPermalink }}"></script>
 
 <main class="main-main">
+  {{ if eq .Site.Params.enableBreadcrumb true }}
   {{ partial "body/breadcrumb" . }}
+  {{ end }}
   <article class="list">
     <header class="list__header">
-      <h5 class="list__header--title h5">{{.Title}}</h5>
+      <h5 class="list__header--title h5">{{ .Title }}</h5>
     </header>
     <div class="list__header--desc p2">
       {{.Content}}

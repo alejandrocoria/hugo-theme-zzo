@@ -1,4 +1,6 @@
-{{ if eq (lower .Site.Params.summaryShape) "card" }}
+{{ if eq (lower .Site.Params.summaryShape) "custom" }}
+  {{ partial "summary/custom" . }}
+{{ else if eq (lower .Site.Params.summaryShape) "card" }}
   {{ partial "summary/card" . }}
 {{ else if eq (lower .Site.Params.summaryShape) "classic" }}
   {{ partial "summary/classic" . }}

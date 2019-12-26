@@ -1,0 +1,18 @@
+{{ define "main" }}
+<header class="header">
+  <h3 class="h3 terms__title">
+    {{ .Title }}
+  </h3>
+</header>
+<main class="main">
+  <article class="single__contents">
+    <div class="trademark">
+      {{ .Content }}
+    </div>
+  </article>
+</main>
+<div class="hide">
+  {{ partial "search/site-search" . }}
+</div>
+{{ partial "script/trademark-script" . }}
+{{ end }}

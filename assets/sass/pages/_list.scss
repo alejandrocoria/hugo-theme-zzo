@@ -1,8 +1,8 @@
 .list {
   &__header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(center);
     margin: 0.5rem;
     font-family: $title-font;
 

@@ -21,10 +21,12 @@
     @include flexbox();
     @include align-items(center);
     @include flex-direction(column);
+    margin: 0 56px;
     padding: 0.5rem 0;
 
     p {
       padding: 0.125rem;
+      text-align: center;
     }
   }
 

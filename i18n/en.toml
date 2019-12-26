@@ -39,3 +39,6 @@ other = "views"
 
 [donate-message]
 other = "Support the author with"
+
+[footer-trademark]
+other = "Trademark Legal Notice"

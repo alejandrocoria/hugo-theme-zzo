@@ -1,0 +1,44 @@
+[search-placeholder]
+other = "Buscar"
+
+[summary-dateformat]
+other = "2 Jan, 2006"
+
+[taxo-tags]
+other = "Etiquetas"
+
+[taxo-categories]
+other = "Categorías"
+
+[taxo-series]
+other = "Series"
+
+[archive-dateformat]
+other = "2 Jan"
+
+[single-dateformat]
+other = "2 Jan, 2006"
+
+[single-related]
+other = "Ver También"
+
+[single-writtenBy]
+other = "ESCRITO POR"
+
+[toc-label]
+other = "Qué hay en esta página"
+
+[counter-site-pv]
+other = "Total de vistas"
+
+[counter-site-uv]
+other = "Total de visitantes"
+
+[counter-page-pv]
+other = "vistas"
+
+[donate-message]
+other = "Apoye al autor con"
+
+[footer-trademark]
+other = "Aviso Legal Sobre Marcas Comerciales"

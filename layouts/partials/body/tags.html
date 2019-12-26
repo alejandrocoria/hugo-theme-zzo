@@ -1,7 +1,8 @@
 <div class="single__tags caption">
 {{ range $index, $value := .Params.Tags }}
   {{ if and (eq $index 0) (ne (len $value) 0) }}
-    🏷️
+    <!--🏷️-->
+	{{ i18n "taxo-tags" }}:
   {{ end }}
   {{ if $value }}
   <li>
