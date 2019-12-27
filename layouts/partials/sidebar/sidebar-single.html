@@ -18,27 +18,27 @@
   <div class="sidebar__buttons">
     {{ if .Params.play_on_android }}
     <a class="sidebar__play_on_button" href='{{ .Params.play_on_android }}'>
-    <img alt='Get it on Google Play' src={{ (resources.Get ("images/projects/play_on_android.png" | relLangURL)).Permalink }}/>
+    <img alt='Get it on Google Play' src="{{ (resources.Get ("images/projects/play_on_android.png" | relLangURL)).RelPermalink }}"/>
     </a>
     {{ end }}
     {{ if .Params.play_on_itchio }}
     <a class="sidebar__play_on_button" href='{{ .Params.play_on_itchio }}'>
-    <img alt='Play on itch.io' src={{ (resources.Get ("images/projects/play_on_itchio.png" | relLangURL)).Permalink }}/>
+    <img alt='Play on itch.io' src="{{ (resources.Get ("images/projects/play_on_itchio.png" | relLangURL)).RelPermalink }}"/>
     </a>
     {{ end }}
     {{ if .Params.play_on_kongregate }}
     <a class="sidebar__play_on_button" href='{{ .Params.play_on_kongregate }}'>
-    <img alt='Play on KONGREGATE' src={{ (resources.Get ("images/projects/play_on_kongregate.png" | relLangURL)).Permalink }}/>
+    <img alt='Play on KONGREGATE' src="{{ (resources.Get ("images/projects/play_on_kongregate.png" | relLangURL)).RelPermalink }}"/>
     </a>
     {{ end }}
     {{ if .Params.link_to_curseforge }}
     <a class="sidebar__play_on_button" href='{{ .Params.link_to_curseforge }}'>
-    <img alt='Download from CurseForge' src={{ (resources.Get ("images/projects/link_to_curseforge.png" | relLangURL)).Permalink }}/>
+    <img alt='Download from CurseForge' src="{{ (resources.Get ("images/projects/link_to_curseforge.png" | relLangURL)).RelPermalink }}"/>
     </a>
     {{ end }}
     {{ if .Params.view_on_github }}
     <a class="sidebar__play_on_button" href='{{ .Params.view_on_github }}'>
-    <img alt='View on GitHub' src={{ (resources.Get ("images/projects/view_on_github.png" | relLangURL)).Permalink }}/>
+    <img alt='View on GitHub' src="{{ (resources.Get ("images/projects/view_on_github.png" | relLangURL)).RelPermalink }}"/>
     </a>
     {{ end }}
   </div>
