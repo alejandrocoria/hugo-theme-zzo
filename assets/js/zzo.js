@@ -177,14 +177,6 @@ $(document).ready(function() {
       $('.navbar__menu').addClass('is-active');
     }
   });
-  $('.navbar__menu-item').each(function() {
-    var menu = $(this).text().trim().toLowerCase();
-    if (location.pathname.includes(menu) || ($(this).attr('data-localizedname') == 'projects' && getMetaIsHome())) {
-      $(this).addClass('active');
-    } else {
-      $(this).removeClass('active');
-    }
-  });
 
   // mobile search
   $('.mobile-search').hide(200);
