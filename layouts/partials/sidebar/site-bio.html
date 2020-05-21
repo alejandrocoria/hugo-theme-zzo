@@ -57,6 +57,12 @@
       {{ end }}
     {{ end }}
   </div>
+  
+  {{ if .Site.Params.donationOptions.patreon }}
+  <div class="bio__patreon">
+    <a href="{{ .Site.Params.donationOptions.patreon }}" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script>
+  </div>
+  {{ end }}
 </section>
 <hr class="hr-fade sidebar-hr"/>
 {{ end }}
