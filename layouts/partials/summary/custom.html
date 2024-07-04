@@ -44,6 +44,11 @@
           <img alt='Download from CurseForge' src="{{ (resources.Get ("images/projects/link_to_curseforge.png" | relLangURL)).RelPermalink }}"/>
         </a>
         {{ end }}
+        {{ if .Params.link_to_modrinth }}
+        <a class="summary-custom__play_on_button" href='{{ .Params.link_to_modrinth }}'>
+          <img alt='Download from Modrinth' src="{{ (resources.Get ("images/projects/link_to_modrinth.png" | relLangURL)).RelPermalink }}"/>
+        </a>
+        {{ end }}
         {{ if .Params.view_on_github }}
         <a class="summary-custom__play_on_button" href='{{ .Params.view_on_github }}'>
           <img alt='View on GitHub' src="{{ (resources.Get ("images/projects/view_on_github.png" | relLangURL)).RelPermalink }}"/>
